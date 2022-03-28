@@ -17,14 +17,17 @@ namespace Basket.API.Controllers
     {
         private readonly IBasketRepository _repository;
         //private readonly DiscountGrpcService _discountGrpcService;
-        private readonly IPublishEndpoint _publishEndpoint;
+        //private readonly IPublishEndpoint _publishEndpoint;
         private readonly IMapper _mapper;
 
-        public BasketController(IBasketRepository repository, IPublishEndpoint publishEndpoint, IMapper mapper)
+        public BasketController(
+            IBasketRepository repository,
+            //IPublishEndpoint publishEndpoint,
+            IMapper mapper)
         {
             _repository = repository ?? throw new ArgumentNullException(nameof(repository));
             //_discountGrpcService = discountGrpcService ?? throw new ArgumentNullException(nameof(discountGrpcService));
-            _publishEndpoint = publishEndpoint ?? throw new ArgumentNullException(nameof(publishEndpoint));
+            //_publishEndpoint = publishEndpoint ?? throw new ArgumentNullException(nameof(publishEndpoint));
             _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
 
